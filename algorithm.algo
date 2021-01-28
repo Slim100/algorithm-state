@@ -1,0 +1,64 @@
+ALGORITHM checkpoint_algo2
+VAR
+    array_Tab1_of INTEGER [1..4];
+    array_Tab2_of INTEGER [1..5];
+    s,S,i,j : INTEGER
+    s:=0;
+    S:=s*2;
+BEGIN
+    
+    FOR i FROM 0 TO 3   DO
+    FOR j FROM 0 TO 4   DO
+    IF (Tab1[i] = Tab2[j]) THEN
+        s:= s + Tab2[j]
+        
+        ELSE
+            s:=s 
+            i++
+            S:=s*2
+        END_IF
+    END_IF
+    END_FOR
+    return("Sum of overlappin elements is" S)
+        
+   
+END
+
+
+ALGORITHM Hash_Table
+htab1:Hash_Table<INTEGER,INTEGER>;
+htab2:Hash_Table<INTEGER,INTEGER>;
+
+
+VAR
+  i,j,s,S : INTEGER
+
+BEGIN
+htab1:Hash_Table<INTEGER,INTEGER>;
+htab1.insert(0,2);
+htab1.insert(1,3);
+htab1.insert(2,4);
+write (htab1);
+
+htab2:Hash_Table<INTEGER,INTEGER>;
+htab2.insert(0,2);
+htab2.insert(1,3);
+htab2.insert(2,4);
+htab2.insert(3,5);
+write (htab2);
+
+FOR i FROM 0 TO htab1.length   DO
+    FOR j FROM 0 TO htab2.length   DO
+        IF (htab1[i] = htab2[j]) THEN
+        count:=1
+        ELSE
+           s:=s 
+            S:=s*2
+        END_IF
+    END_IF
+    END_FOR
+    return("la somme est" S)
+
+
+
+END
